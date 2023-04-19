@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto">
+        <h1 class="text-2xl font-bold mt-8 mb-4">Shopping Cart</h1>
+        <table class="table-auto w-full">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">#</th>
+                    <th class="px-4 py-2">Product Name</th>
+                    <th class="px-4 py-2">Quantity</th>
+                    <th class="px-4 py-2">Price</th>
+                    <th class="px-4 py-2">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">1</td>
+                    <td class="border px-4 py-2">
+                        <div class="flex items-center">
+                            <img src="laptop.png" alt="Laptop Dell XPS 13" class="mr-4">
+                            <div>
+                                <p class="font-bold">Laptop Dell XPS 13</p>
+                                <p class="text-sm text-gray-500">Intel Core i7, 16GB RAM, 512GB SSD</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="decrementQuantity(1)">-</button>
+                        <span id="quantity1" class="bg-white px-4 py-2 border-r border-l">1</span>
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r" onclick="incrementQuantity(1)">+</button>
+                    </td>
+                    <td class="border px-4 py-2">$1,299.99</td>
+                    <td class="border px-4 py-2">$<span id="total1">1,299.99</span></td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">2</td>
+                    <td class="border px-4 py-2">
+                        <div class="flex items-center">
+                            <img src="iphone.png" alt="Apple iPhone 13" class="mr-4">
+                            <div>
+                                <p class="font-bold">Apple iPhone 13</p>
+                                <p class="text-sm text-gray-500">128GB, 5G, Ceramic Shield</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <button class="
+                        bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="decrementQuantity(2)">-</button>
+                        <span id="quantity2" class="bg-white px-4 py-2 border-r border-l">1</span>
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r" onclick="incrementQuantity(2)">+</button>
+                        </td>
+                        <td class="border px-4 py-2">$799.00</td>
+                        <td class="border px-4 py-2">$<span id="total2">799.00</span></td>
+                        </tr>
+                        <tr>
+                        <td class="border px-4 py-2">3</td>
+                        <td class="border px-4 py-2">
+                        <div class="flex items-center">
+                        <img src="zegarek.png" alt="Samsung Galaxy Watch 4" class="mr-4">
+                        <div>
+                        <p class="font-bold">Samsung Galaxy Watch 4</p>
+                        <p class="text-sm text-gray-500">44mm, GPS, Bluetooth</p>
+                        </div>
+                        </div>
+                        </td>
+                        <td class="border px-4 py-2">
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="decrementQuantity(3)">-</button>
+                        <span id="quantity3" class="bg-white px-4 py-2 border-r border-l">1</span>
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r" onclick="incrementQuantity(3)">+</button>
+                        </td>
+                        <td class="border px-4 py-2">$249.99</td>
+                        <td class="border px-4 py-2">$<span id="total3">249.99</span></td>
+                        </tr>
+                        <tr>
+                        <td class="border px-4 py-2">4</td>
+                        <td class="border px-4 py-2">
+                        <div class="flex items-center">
+                        <img src="słucahwki.png" alt="Sony WH-1000XM4" class="mr-4">
+                        <div>
+                        <p class="font-bold">Sony WH-1000XM4</p>
+                        <p class="text-sm text-gray-500">Wireless Noise Cancelling Headphones</p>
+                        </div>
+                        </div>
+                        </td>
+                        <td class="border px-4 py-2">
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onclick="decrementQuantity(4)">-</button>
+                        <span id="quantity4" class="bg-white px-4 py-2 border-r border-l">1</span>
+                        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r" onclick="incrementQuantity(4)">+</button>
+                        </td>
+                        <td class="border px-4 py-2">$349.99</td>
+                        <td class="border px-4 py-2">$<span id="total4">349.99</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                
+                    <div class="flex justify-end mt-4">
+                        <p class="text-lg font-bold mr-4">Total: $<span id="grandTotal">2348.98</span></p>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="checkout()">Checkout</button>
+                    </div>
+                </div>
+                
+                <script>
+                    function incrementQuantity(id) {
+                        let quantityElement = document.getElementById(`quantity${id}`);
+                        let quantity = parseInt(quantityElement.innerText);
+                        quantity++;
+                        quantityElement.innerText = quantity;
+                
+                        let priceElement = document.getElementById(`price${id}`);
+                        let price = parseFloat(priceElement.innerText);
+                        let totalElement = document.getElementById(`total${id}`);
+                        let total = price * quantity;
+                        totalElement.innerText = total.toFixed(2);
+                
+                        updateGrandTotal();
+                    }
+                
+                    function decrementQuantity(id) {
+                        let quantityElement = document.getElementById(`quantity${id}`);
+                        let quantity = parseInt(quantityElement.innerText);
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityElement.innerText = quantity;
+                
+                            let priceElement = document.getElementById(`price${id}`);
+                            let price = parseFloat(priceElement.innerText);
+                            let totalElement = document.getElementById(`total${id}`);
+                            let total = price * quantity;
+                            totalElement.innerText = total.toFixed(2);
+                
+                            updateGrandTotal();
+                        }
+                    }
+                
+                    function updateGrandTotal() {
+                        let grandTotal = 0;
+                        for (let i = 1; i <= 4; i++) {
+                            let totalElement = document.getElementById(`total${i}`);
+                            let total = parseFloat(totalElement.innerText);
+                            grandTotal += total;
+                        }
+                        let grandTotalElement = document.getElementById('grandTotal');
+                        grandTotalElement.innerText = grandTotal.toFixed(2);
+                    }
+                
+                    function checkout() {
+                        alert('Thank you for your purchase!');
+                    }
+                </script>
+                </body>
+                </html>
